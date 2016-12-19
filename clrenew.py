@@ -1,46 +1,50 @@
 #Welcome to clrenew, a tool to renew your craigslist listings
 import os
-from selenium import webdriver
 import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument('--user-data-dir=/home/$USER/.config/chromium/Default')
 
 # Find Renew links and click them
-driver=webdriver.Firefox()
+driver = webdriver.Chrome()  
 
-url="https://accounts.craigslist.org/login/home?filter_page=1"
+
+url0="https://accounts.craigslist.org/login/home"
+url1="https://accounts.craigslist.org/login/home?filter_page=1"
+url2="https://accounts.craigslist.org/login/home?filter_page=2"
+
+driver.get(url0)
+
 try:
     time.sleep(5)
-    driver.get(url)
-    element = driver.find_element_by_xpath("//div[@class='manage renew']")
+    driver.get(url1)
+    element = driver.find_element_by_xpath("//*[@id='paginator']/table/tbody/tr[1]/td[2]/div/form[3]/input[3]")
     element.click()
     time.sleep(5)
-    element = driver.find_element_by_xpath("//div[@class='manage renew']")
+    element = driver.find_element_by_xpath("//*[@id='paginator']/table/tbody/tr[2]/td[2]/div/form[3]/input[3]")
     element.click()
-    time.sleep(5)
+    time.sleep(10)
 except Exception as e:
     print e
-    driver.quit()
-driver.quit()
+
+
 
 
 print "done, trying next page"
 
 #run it again
-driver=webdriver.Firefox()
-
-url="https://accounts.craigslist.org/login/home?filter_page=2"
 try:
-    driver.get(url)
-    element = driver.find_element_by_xpath("//div[@class='manage renew']")
+    time.sleep(5)
+    driver.get(url2)
+    element = driver.find_element_by_xpath("//*[@id='paginator']/table/tbody/tr[1]/td[2]/div/form[3]/input[3]")
     element.click()
     time.sleep(5)
-    element = driver.find_element_by_xpath("//div[@class='manage renew']")
+    element = driver.find_element_by_xpath("//*[@id='paginator']/table/tbody/tr[2]/td[2]/div/form[3]/input[3]")
     element.click()
     time.sleep(5)
 except Exception as e:
     print e
-    driver.quit()
-driver.quit()
-
 
 print "done, your renewal is complete."
-
+driver.quit()
