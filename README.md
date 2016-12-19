@@ -2,11 +2,11 @@
 A simple python script to log into your craigslist account and renew any listings that can be renewed.
 
 ##Requirements
-You will need selenium and geckodriver
+You will need selenium and ChromeDriver
 
 * `pip install selenium`
 
-* [Download geckodriver from here](https://github.com/mozilla/geckodriver/releases) and put it in your /usr/bin/ directory.
+* [Download ChromeDriver from here](https://sites.google.com/a/chromium.org/chromedriver/downloads) and put it in your /usr/bin/ directory.
 
 ## Usage
 Simple clone the repo and run clrenew.py in terminal:
