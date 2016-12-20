@@ -1,13 +1,16 @@
 #Welcome to clrenew, a tool to renew your craigslist listings
 import os
 import time
+from os.path import expanduser
+home = expanduser("~")
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-chrome_options = Options()
-chrome_options.add_argument('--user-data-dir=/home/$USER/.config/chromium/Default')
+options = Options()
+options.add_argument('--user-data-dir=%s' % os.path.join(os.path.expanduser("~"), ".config/chromium/Default" ) )
+
 
 # Find Renew links and click them
-driver = webdriver.Chrome()  
+driver = webdriver.Chrome(chrome_options=options)  
 
 
 url0="https://accounts.craigslist.org/login/home"
