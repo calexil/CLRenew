@@ -10,9 +10,11 @@ You will need pyautogui  and python-tk
 
 
 ## Usage
-Simple clone the repo and run clrenew.py in terminal:
+Simple clone the repo and run renew.py in terminal:
 
 `python renew.py`
+
+And watch it work. It's kinda cool.
 
 ## Notes
 
