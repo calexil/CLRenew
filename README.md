@@ -10,7 +10,7 @@ You will need pyautogui  and python-tk
 
 
 ## Usage
-Simple clone the repo and run renew.py in terminal:
+Simple clone the repo, open your browser and navigate to your active listings, then run renew.py in terminal:
 
 `python renew.py`
 
