@@ -32,9 +32,9 @@ while True:
         counter += 1
         print ("counter =" + str(counter))
         if counter >= 3: counter = 0
-             pyautogui.time.sleep(2)
-             renewButtonLocationX,renewButtonLocationY  = pyautogui.locateCenterOnScreen('page2.png')
-             pyautogui.moveTo(renewButtonLocationX, renewButtonLocationY)
-             pyautogui.click()
-             pyautogui.time.sleep(2)
+        pyautogui.time.sleep(2)
+        renewButtonLocationX,renewButtonLocationY  = pyautogui.locateCenterOnScreen('page2.png')
+        pyautogui.moveTo(renewButtonLocationX, renewButtonLocationY)
+        pyautogui.click()
+        pyautogui.time.sleep(2)
 
